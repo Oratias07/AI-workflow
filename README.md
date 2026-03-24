@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="./ProfilePicture2026-03-24.jpeg" alt="Or Atias" width="150" style="border-radius: 50%;" />
+  <img src="./ProfilePicture2026-03-24.jpeg" alt="Or Atias" width="120" style="border-radius: 50%;" />
 
-  # Or Atias — AI Workflow
+  # AI-Workflow
 
-  **Software Engineer · Systems Programmer · AI-Integrated Developer**
+  **A structured approach to working with AI as a developer**
 
   [![GitHub](https://img.shields.io/badge/GitHub-Oratias07-181717?style=flat&logo=github)](https://github.com/Oratias07)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-or--atias-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/or-atias-676097341)
@@ -12,64 +12,62 @@
 
 ---
 
-<div align="center">
+## What This Repo Is
 
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Oratias07&show_icons=true&theme=dark&hide_border=true&count_private=true)
-  ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Oratias07&layout=compact&theme=dark&hide_border=true)
+Most developers use AI tools reactively — paste a problem, accept the output, move on. This repo documents a different approach: treating AI as a technical collaborator that requires precise input, critical review, and clear behavioral expectations.
 
-</div>
+It contains the prompts I use, the principles I hold AI to, and the configuration that shapes how I work. It's not a showcase of AI-generated output — it's a record of methodology.
 
 ---
 
 ## About Me
 
-I'm a second-year Software Engineering student at Braude College of Engineering (GPA: 85), with deep experience in low-level C/C++, x86 Assembly, and AI-integrated web development. I teach C programming as part of the Ministry of Defense's Cyber Education Program and support systems coursework at Braude — which means I spend as much time explaining how code breaks as I do writing it. My technical foundation sits at the hardware-software boundary: memory layout, pointer arithmetic, undefined behavior, and the kind of bugs that only show up under pressure. That same foundation is what draws me toward security — systems knowledge is not optional in this field, it's the prerequisite.
+I'm Or Atias, a second-year Software Engineering student at Braude College (GPA: 85). My background is in low-level systems: C/C++, x86 Assembly, memory architecture. I teach C programming in the Ministry of Defense's Cyber Education Program and support systems coursework at Braude — which means I spend as much time diagnosing how code breaks as I do writing it.
+
+That foundation — knowing what happens below the abstraction layer — is what makes AI tools both more useful and more dangerous for me. I know enough to catch what they get wrong.
 
 ---
 
 ## How I Work With AI
 
-I use AI as a technical collaborator, not an autocomplete engine. The difference matters.
+**Precise input.** Vague prompts produce vague results. Before I ask anything, I define the context, the constraints, and what a good answer actually looks like. Most bad AI output is a prompt problem.
 
-**I write precise prompts.** Vague questions produce vague answers. Before I ask anything, I define the context, the constraints, and what "good" looks like. The quality of the output is determined entirely by the quality of the input.
+**Critical review.** AI-generated code goes through the same scrutiny as any other code: memory safety, edge cases, security implications. Trusting output blindly is how subtle bugs get shipped to production.
 
-**I verify everything.** AI-generated code gets the same scrutiny as any other code — checked for memory safety, edge cases, and security implications before it goes anywhere near a real system. Trusting output blindly is how subtle bugs get shipped.
+**Iterative refinement.** First outputs are drafts. I push back on the approach, ask for tradeoffs, and request alternatives I didn't think of. The most useful thing AI can do is tell me my framing is wrong before I implement it.
 
-**I push back.** The most useful thing AI can do is tell me my framing is wrong before I implement it. I treat first outputs as drafts and iterate: challenge the approach, ask for tradeoffs, request the alternative I didn't think of.
-
-**I hold it to production standards.** I don't accept code that "works for now." Every AI-assisted solution I keep is held to the same bar as code I'd deploy — correct, maintainable, and secure.
+**Production standards only.** I don't keep code that "works for now." If it wouldn't survive a real deployment — with real users, real edge cases, real attackers — it doesn't go in.
 
 ---
 
 ## What's In This Repo
 
-| File / Folder | Description |
-|---|---|
-| `README.md` | This file |
-| `CLAUDE.md` | My AI behavior configuration — how I expect AI tools to work with me |
-| `about-me.md` | Structured background extracted from my resume |
-| `prompts/code-security-review.md` | Systematic security review of C/C++ and TypeScript code |
-| `prompts/vulnerability-analysis.md` | Deep-dive analysis of a specific vulnerability or CVE |
-| `prompts/learning-roadmap.md` | Building a personalized cybersecurity learning path |
-| `prompts/cv-optimization.md` | Tailoring a technical CV for security and software roles |
+```
+AI-workflow/
+├── CLAUDE.md                          # Behavioral config — how I expect AI to work with me
+├── about-me.md                        # Background and technical profile
+└── prompts/
+    ├── code-security-review.md        # Systematic security audit of C/C++ and TypeScript code
+    ├── vulnerability-analysis.md      # Deep-dive analysis of a specific vulnerability or CVE
+    ├── learning-roadmap.md            # Building a personalized cybersecurity learning path
+    └── cv-optimization.md             # Tailoring a technical CV for security and software roles
+```
+
+Each prompt is built to be reusable and role-specific — not generic "explain this code" requests, but structured prompts with defined output formats, severity levels, and context parameters.
 
 ---
 
 ## My AI Principles
 
-These aren't settings in a config file. They're how I think about working with AI.
+**Truth over comfort.** I don't want an AI that validates my assumptions. I want one that corrects them. An AI that agrees with everything I say is actively harmful — it gives me confidence in bad decisions.
 
-**Truth over comfort.** I don't want validation — I want the correct answer, even when it contradicts my assumptions. An AI that agrees with everything I say is actively harmful, because it gives me false confidence in bad decisions.
+**Best solution, not safest one.** When tradeoffs exist, I want them named. Not the cautious hedge, not the generic recommendation — the option that's actually right, with an honest account of what it costs.
 
-**Best solution, not safest one.** When there are tradeoffs, I want them named clearly. I don't want the most cautious hedge — I want the option that's actually right, with an honest explanation of what it costs.
+**Concrete over abstract.** Theory is useful. When I'm solving a real problem, I need working examples, specific recommendations, and code I can run — not generalities about best practices.
 
-**Production-quality thinking.** Code that "works for now" fails later, usually in the worst possible moment. Every solution I build — AI-assisted or not — is held to the standard of code I'd ship to real users.
-
-**Concrete over abstract.** Abstractions are useful for theory. When I'm solving a real problem, I need examples, specific recommendations, and code I can run — not generalities about best practices.
-
-**Challenge my reasoning.** If my stated problem isn't the real problem, I want to know before I spend time solving the wrong thing. The value of a good technical partner isn't agreement — it's pushback at the right moment.
+**Challenge my reasoning.** If my stated problem isn't the real problem, I want to know before I build the wrong solution. The value of a good collaborator — human or AI — is pushback at the right moment.
 
 ---
 
 *B.Sc. Software Engineering · Braude College of Engineering (2024–2028)*
-*GitHub: [Oratias07](https://github.com/Oratias07) · LinkedIn: [or-atias](https://www.linkedin.com/in/or-atias-676097341)*
+*Reach me on [LinkedIn](https://www.linkedin.com/in/or-atias-676097341) or explore my work on [GitHub](https://github.com/Oratias07)*
