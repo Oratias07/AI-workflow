@@ -1,6 +1,23 @@
-# Or Atias — AI Workflow
+<div align="center">
+  <img src="./ProfilePicture2026-03-24.jpeg" alt="Or Atias" width="150" style="border-radius: 50%;" />
 
-**Software Engineer · Systems Programmer · AI-Integrated Developer**
+  # Or Atias — AI Workflow
+
+  **Software Engineer · Systems Programmer · AI-Integrated Developer**
+
+  [![GitHub](https://img.shields.io/badge/GitHub-Oratias07-181717?style=flat&logo=github)](https://github.com/Oratias07)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-or--atias-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/or-atias-676097341)
+
+</div>
+
+---
+
+<div align="center">
+
+  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Oratias07&show_icons=true&theme=dark&hide_border=true&count_private=true)
+  ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Oratias07&layout=compact&theme=dark&hide_border=true)
+
+</div>
 
 ---
 
