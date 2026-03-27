@@ -1,78 +1,93 @@
 # Fitness Trainer MVP App - Claude Code Prompt
 
-Create a complete, production-ready MVP application with the following specifications:
+*Complete session logging and billing platform for fitness trainers to track workouts, manage trainees, and handle month-end invoicing and payroll*
+
+## Overview
+
+A mobile-first application designed for fitness trainers to streamline their daily operations. Trainers can quickly log training sessions with biometric login, track multiple trainees across different training tracks, and automate month-end billing and salary calculations. Group managers can oversee multiple trainers, set rates, and generate payment reports. Built with security and data integrity as top priorities.
 
 ## Core Features
 
 ### 1. Authentication & Access
-* Facial recognition login for trainers using iPhone camera (use FaceID/face detection API)
-* Secure session management
+* Facial recognition login for trainers using iPhone camera (FaceID/face detection API)
+* Secure session management with automatic timeouts
 * Multi-user support with role-based access (Trainer, Group Manager, Admin)
+* Passwordless biometric authentication for ease of use
 
 ### 2. Trainer Dashboard
-* Quick-access interface to log training sessions
-* Form inputs for: trainee name, training track (select from list), duration/amount per workout
+* Quick-access interface to log training sessions (3-4 steps max)
+* Form inputs for: trainee name, training track (dropdown), duration/amount per workout
 * Real-time session logging with timestamps
 * Edit/delete previous session logs within current month
+* At-a-glance daily summary and session count
 
 ### 3. Training Tracks System
-* Predefined training tracks (e.g., Strength, Cardio, Flexibility, Sports-Specific)
-* Ability to create custom tracks
+* Predefined training tracks (Strength, Cardio, Flexibility, Sports-Specific)
+* Create custom tracks specific to trainer or group
 * Group tracks with designated group managers
 * Per-track pricing/rate configuration by managers
+* Track-specific notes and requirements
 
 ### 4. Monthly Session Closing
-* Month-end finalization workflow
-* "Summarize and Send" button that generates:
+* Month-end finalization workflow with warning system
+* "Summarize and Send" button generates:
   * Total training hours/sessions per trainee
   * Amount owed by trainee (calculated from track rates × hours)
   * Debt notification message
   * Invoice/summary document
 * Prevents modification of closed months
+* Archive previous months for reference
 
 ### 5. Group Manager Features
 * Dashboard showing all trainers in their group
 * Automatic notifications of trainer deliverables
-* Set salary rates per trainee
+* Set and adjust salary rates per trainee
 * View total salary owed to trainers based on delivered training
 * Generate trainer payment reports
+* Performance metrics and group analytics
 
 ### 6. Analytics & Statistics
 * Monthly statistics per track (total hours, sessions, trainees)
-* Trainer performance metrics
+* Trainer performance metrics and comparisons
 * Group performance insights
 * Exportable reports (PDF/CSV)
-* Charts/visualizations of training trends
+* Charts/visualizations of training trends over time
 
 ### 7. Notifications System
 * Push notifications for month-end reminders
 * Debt notifications to trainees
 * Salary notifications to group managers
 * Email summaries of monthly activity
+* Configurable notification preferences
 
 ## Technical Requirements
 
-### Technology Stack:
-* Frontend: React Native (for iOS-first mobile experience) or React web with mobile responsiveness
-* Backend: Node.js/Express or Python (your choice)
-* Database: PostgreSQL (with secure encryption for sensitive data)
-* Authentication: Biometric (FaceID) + token-based auth (JWT)
-* Notifications: Firebase Cloud Messaging or similar
+### Technology Stack
+* Frontend: React Native (iOS-first) or React web with mobile responsiveness
+* Backend: Node.js/Express or Python
+* Database: PostgreSQL with encryption
+* Authentication: Biometric (FaceID) + JWT token-based auth
+* Notifications: Firebase Cloud Messaging or Twilio
+* File Generation: PDF libraries for invoices and reports
 
-### Security Requirements:
-* Encrypt sensitive data (trainer IDs, trainee information, financial data)
-* Implement role-based access control (RBAC)
+### Security Requirements
+* Encrypt sensitive data at rest (trainer IDs, trainee info, financial data)
+* Implement role-based access control (RBAC) at API level
 * Secure API endpoints with authentication middleware
-* Session timeouts for biometric login
-* Audit logging for all transactions
-* GDPR-compliant data handling
-* Secure password reset mechanisms
+* Session timeouts for biometric login (15-30 min idle)
+* Audit logging for all transactions and access
+* GDPR-compliant data handling and retention policies
+* Secure password reset mechanisms for secondary auth
+* Financial transaction logging and reconciliation
 
-### Project Structure:
-
+### Project Structure
 ```
 ├── src/
 │   ├── components/
+│   │   ├── Dashboard/
+│   │   ├── SessionLogger/
+│   │   ├── TrackManager/
+│   │   └── Reports/
 │   ├── screens/
 │   ├── services/
 │   ├── utils/
@@ -88,10 +103,6 @@ Create a complete, production-ready MVP application with the following specifica
 ├── database/
 │   ├── migrations/
 │   └── seeds/
-├── config/
-│   ├── env.example
-│   ├── database.config.js
-│   └── app.config.js
 ├── tests/
 ├── docs/
 └── README.md
@@ -100,70 +111,66 @@ Create a complete, production-ready MVP application with the following specifica
 ## Deliverables
 
 ### 1. Complete Application Code
-* Full frontend implementation (mobile-ready)
+* Full frontend implementation (mobile-responsive)
 * Backend API with all endpoints
 * Database schema and migrations
 * Authentication system with biometric support
+* Session logging and billing engines
 
 ### 2. Configuration Files
 * `.env.example` with all required variables
 * `database.config.js` with connection settings
-* `app.config.js` with app-wide settings (rates, notification settings, etc.)
-* `auth.config.js` for security settings
+* `app.config.js` with app-wide settings (rates, notification settings)
+* `auth.config.js` with security and session settings
+* `notifications.config.js` for push notification setup
 
-### 3. Skill Files (if using Claude Code modules)
-* Create reusable skill files for:
-  * Biometric authentication
-  * Financial calculations (invoicing, salary)
-  * Report generation
-  * Notification dispatch
-
-### 4. Documentation
+### 3. Documentation
 * API documentation (list all endpoints)
 * Database schema diagram
 * Setup and deployment instructions
 * User guide for trainers and managers
 * Security best practices document
+* Integration guide for payment systems
 
-### 5. Database Schema (include migrations)
-* Users table (with roles: trainer, manager, admin)
-* Trainees table
-* TrainingTracks table
-* TrainingSessions table (with timestamps, amounts)
-* Groups table (for group management)
-* Invoices/Bills table
-* Notifications table
-* AuditLogs table
-
-### 6. Additional Features
-* Dashboard with at-a-glance metrics
-* Search and filter functionality
-* Bulk actions (e.g., send multiple invoices)
-* Settings page for admins/managers
-* Help/FAQ section
-* Error handling and user-friendly error messages
+### 4. Database Schema
+* Users - Account info with roles (trainer, manager, admin)
+* Trainees - Trainee profiles and contact info
+* TrainingTracks - Track names, types, and pricing
+* TrainingSessions - Session logs with timestamps, durations, amounts
+* Groups - Group management and hierarchy
+* Invoices/Bills - Generated billing documents
+* Notifications - Notification history and status
+* AuditLogs - All transactions and access logs
 
 ## UI/UX Specifications
 * Clean, modern, trainer-friendly interface
-* Minimal clicks to log a session (aim for 3-4 steps max)
-* Large, readable text and buttons (for quick use)
-* Dark mode support
+* Minimal clicks to log a session (target: 3-4 steps max)
+* Large, readable text and buttons for quick use
+* Dark mode support for low-light gym environments
 * Offline capability for session logging (sync when online)
-* Responsive design that works on iPhone, iPad, and desktop
+* Responsive design for iPhone, iPad, and desktop
+* High contrast for accessibility (WCAG AA)
+* Intuitive navigation and clear call-to-action buttons
 
 ## Testing & Quality Assurance
 * Unit tests for critical functions (calculations, auth)
 * Integration tests for API endpoints
-* Test data seeds for development
-* Error scenarios well-handled
+* Test data seeds for development with realistic scenarios
+* Error scenarios well-handled with user-friendly messages
+* Performance testing for offline sync and large datasets
+* Security penetration testing for authentication
+* Load testing for concurrent users
 
-## Installation & Setup Instructions
-* Provide step-by-step setup guide
-* Include Docker configuration (if applicable)
-* Provide database initialization scripts
+## Setup & Deployment
+* Prerequisites: Node.js 16+, PostgreSQL 12+
+* Step-by-step setup guide with environment configuration
+* Docker Compose setup for local development
+* Database initialization and migration scripts
+* Production deployment instructions
+* CI/CD pipeline configuration
 
 ---
 
-**Start with the core features and ensure each is fully functional before adding enhancements. Prioritize security, data integrity, and user experience.**
+**Start with the core features (sessions logging, dashboard, month-end closing). Prioritize security, data integrity, and user experience.**
 
-This prompt is ready to paste directly into Claude Code and will guide it to create a comprehensive, production-grade application with all the structure and security considerations needed for a real-world fitness trainer management system.
+This prompt is production-ready for fitness training businesses needing secure, scalable session and billing management.
