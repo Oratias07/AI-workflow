@@ -1,4 +1,13 @@
-# Prompt for Implementing CHAM Model in ST-System
+# Prompt: CHAM Model Implementation for ST-System
+
+**Use case:** Implementing a sophisticated three-layer code assessment system that combines automated unit testing, LLM-based quality analysis, and intelligent human review routing. Designed for educational platforms that need accurate, fair, and scalable code evaluation with minimal false positives/negatives.
+
+---
+
+## Prompt
+
+```
+# Implementing CHAM Model in ST-System
 
 ## System Context
 You are working on ST-System - an AI-powered student assessment system built with Next.js 14, MongoDB Atlas, and Google OAuth. The system currently runs assessments using Gemini API and is hosted on Vercel.
@@ -586,3 +595,15 @@ CHAM model is an advanced architecture that combines:
 **Goal:** Accurate, fair, and efficient assessment that combines the strengths of each method and reduces false positives/negatives.
 
 **Expected Result:** An assessment system that students trust more, teachers work less on, and grades better reflect actual performance.
+```
+
+---
+
+**When to use this prompt:**
+- Building or upgrading an automated code assessment system for educational platforms
+- Implementing multi-layer evaluation that goes beyond simple unit testing
+- Creating a system that needs to balance automation with human oversight
+- Developing assessment tools for programming courses with diverse question types
+- Migrating from purely manual or purely automated grading to a hybrid approach
+- Reducing teacher workload while maintaining high assessment quality
+- Minimizing false positives (good code scored low) and false negatives (bad code scored high)
